@@ -1,0 +1,284 @@
+/*--------------------------------------------------------------
+# Responsive fixes
+# Loaded after style.css (see src/app/layout.tsx) so these win
+# over the theme's rules of equal specificity.
+--------------------------------------------------------------*/
+
+/* Long Georgian words: break as a last resort instead of overflowing */
+h1, h2, h3, h4, h5, h6, p, a {
+  overflow-wrap: break-word;
+}
+
+/* The display font has no "@" glyph, so emails rendered as "INFO BUILDIX.GE" */
+.main-menu-two__contact-list a[href^="mailto:"] {
+  font-family: var(--finris-font);
+  text-transform: none;
+}
+
+/*--------------------------------------------------------------
+# Laptops & desktops below full HD (1200px – 1919px)
+# Georgian menu labels are much wider than the theme's English
+# ones, so the header wrapped onto 2–3 rows and covered the hero.
+--------------------------------------------------------------*/
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .main-menu-two__top-inner,
+  .main-menu-two__wrapper-inner {
+    flex-wrap: nowrap;
+  }
+
+  .main-menu-two__top-welcome-text,
+  .main-menu-two__call {
+    display: none;
+  }
+
+  .main-menu-two .main-menu__list>li+li,
+  .stricky-header.main-menu-two .main-menu__list>li+li {
+    margin-left: 4px;
+  }
+
+  .main-menu-two .main-menu__list>li>a,
+  .stricky-header.main-menu-two .main-menu__list>li>a {
+    font-size: 14px;
+    padding: 10px 9px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .main-menu-two__top-time,
+  .main-menu-two__btn-box {
+    display: none;
+  }
+
+  .main-slider__title {
+    font-size: 76px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero button (≤1599px)
+--------------------------------------------------------------*/
+@media (max-width: 1599px) {
+  /* Hero button was absolutely positioned over the (wrapping) title */
+  .main-slider__btn {
+    position: relative;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main-slider__title {
+    font-size: 72px;
+  }
+
+  /* Keep the CTA title clear of the image on the right */
+  .cta-one__inner-content {
+    padding-right: 360px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Tablet & below (≤991px)
+--------------------------------------------------------------*/
+@media (max-width: 991px) {
+  .faq-one__right .faq-one-accrodion .accrodion-title h4 {
+    padding-right: 30px;
+  }
+
+  .cta-one__img {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-slider__title {
+    font-size: 60px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sticky header on tablets & phones
+# The theme hides it below 1200px, leaving no way to reach the
+# menu after scrolling. Show a compact logo + burger bar instead.
+--------------------------------------------------------------*/
+@media (max-width: 1199px) {
+  .stricky-header {
+    display: block !important;
+  }
+
+  .stricky-header .main-menu-two__wrapper-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .stricky-header .main-menu-two__logo {
+    padding: 12px 0;
+  }
+
+  .stricky-header .mobile-nav__toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -13px;
+  }
+
+  .stricky-header .main-menu-two__right {
+    display: none;
+  }
+
+  .stricky-header .main-menu-two__logo img {
+    width: 110px;
+    height: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Phones (≤767px)
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+
+  /* --- Section spacing: 120px gaps are far too tall on a phone --- */
+  .services-two { padding: 70px 0 50px; }
+  .about-two { padding: 70px 0 70px; }
+  .cta-one { padding: 60px 0 0; }
+  .why-choose-two { padding: 70px 0 60px; }
+  .process-two { padding: 70px 0 50px; }
+  .portfolio-two { padding-top: 70px; }
+  .blog-two { padding: 70px 0 70px; }
+  .about-three { padding-top: 70px; }
+  .why-choose-four { padding: 80px 0 80px; }
+  .awards-one { padding-top: 70px; }
+  .services-one { padding-top: 70px; }
+  .why-choose-three { padding: 60px 0 50px; }
+  .cta-three { padding: 60px 0 60px; }
+  .faq-one { padding: 70px 0 70px; }
+  .pricing-two { padding-bottom: 70px; }
+  .portfolio-page { padding: 60px 0 50px; }
+  .gallery-page { padding: 60px 0 60px; }
+  .pricing-one { padding: 60px 0 50px; }
+  .blog-page { padding: 60px 0 70px; }
+  .contact-page { padding: 60px 0 50px; }
+  .google-map-one { padding: 40px 0 70px; }
+
+  /* --- Titles --- */
+  .section-title-two__title,
+  .section-title__title {
+    font-size: 28px;
+  }
+
+  .cta-three__title {
+    font-size: 30px;
+  }
+
+  .contact-page__contact-form-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* --- About: points list sized to its content and overflowed --- */
+  .about-two__points-box {
+    align-items: stretch;
+  }
+
+  .about-two__points li .content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* --- Counters: 2×2 grid instead of a tall single column --- */
+  .counter-one__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 15px;
+  }
+
+  .counter-one__list li {
+    min-width: 0;
+  }
+
+  /* --- Portfolio slider: keep the page gutter --- */
+  .portfolio-two .swiper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* --- Footer: two link columns side by side --- */
+  .footer-widget-two__quick-links-list li+li {
+    margin-top: 12px;
+  }
+
+  /* --- Back-to-top: the rotated edge label sat on top of content --- */
+  .scroll-to-top {
+    transform: none;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: var(--finris-base);
+    color: var(--finris-white);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .scroll-to-top.show {
+    bottom: 20px;
+  }
+
+  .scroll-to-top__wrapper,
+  .scroll-to-top__text {
+    display: none;
+  }
+
+  .scroll-to-top::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid currentColor;
+    border-left: 2px solid currentColor;
+    transform: translateY(2px) rotate(45deg);
+  }
+
+  .scroll-to-top:hover {
+    color: var(--finris-white);
+  }
+
+  /* --- Mobile nav: never wider than the screen --- */
+  .mobile-nav__content {
+    max-width: 85vw;
+  }
+}
+
+/*--------------------------------------------------------------
+# Small phones (≤400px)
+--------------------------------------------------------------*/
+@media (max-width: 400px) {
+  .section-title-two__title,
+  .section-title__title {
+    font-size: 24px;
+  }
+
+  .about-two__points li .content h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .cta-one__title,
+  .cta-three__title {
+    font-size: 26px;
+  }
+
+  .faq-one__right .faq-one-accrodion .accrodion-title h4 {
+    font-size: 18px;
+  }
+
+  .counter-one__count .count-text,
+  .counter-one__count-plus {
+    font-size: 44px;
+  }
+}
