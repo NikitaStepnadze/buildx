@@ -48,10 +48,65 @@ h1, h2, h3, h4, h5, h6, p, a {
   .main-menu-two__btn-box {
     display: none;
   }
+}
+
+/*--------------------------------------------------------------
+# Hero cover image
+--------------------------------------------------------------*/
+.main-slider {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.2) 100%),
+    url("../buildx_hero.png") center / cover no-repeat #121e0f;
+}
+
+/*--------------------------------------------------------------
+# Hero text pinned to the left so the photo stays visible (≥992px)
+--------------------------------------------------------------*/
+@media (min-width: 992px) {
+  .main-slider .item > .container {
+    max-width: none;
+    margin: 0;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+
+  .main-slider__content {
+    max-width: 640px;
+  }
 
   .main-slider__title {
-    font-size: 76px;
+    font-size: 56px;
+    line-height: 1.2em;
   }
+
+  .main-slider__btn {
+    position: relative;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+
+  .main-slider__text {
+    margin-bottom: 40px;
+  }
+
+  .main-slider__satisfied-client-and-rating-box {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero as a banner on laptops (1200px – 1919px)
+# Keep it from filling the whole viewport so the next section peeks in.
+--------------------------------------------------------------*/
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .main-slider .item {
+    padding-top: 170px;
+    padding-bottom: 70px;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -70,7 +125,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .main-slider__title {
-    font-size: 72px;
+    font-size: 48px;
   }
 
   /* Keep the CTA title clear of the image on the right */
@@ -281,4 +336,50 @@ h1, h2, h3, h4, h5, h6, p, a {
   .counter-one__count-plus {
     font-size: 44px;
   }
+}
+
+/*--------------------------------------------------------------
+# Hero photo as a fixed backdrop behind the CTA + "Why us" block
+--------------------------------------------------------------*/
+.hero-parallax {
+  position: relative;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../buildx_hero.png") center / cover no-repeat fixed #121e0f;
+  padding-bottom: 80px;
+}
+
+.hero-parallax .why-choose-two__text,
+.hero-parallax .why-choose-two__points li .content p,
+.hero-parallax .why-choose-two__points li .content h4 a,
+.hero-parallax .section-title-two__tagline,
+.hero-parallax .section-title-two__title b {
+  color: #fff !important;
+}
+
+.hero-parallax .section-title-two__title > div:last-child b {
+  color: var(--finris-primary) !important;
+}
+
+/* iOS and small screens ignore fixed attachments */
+@media (max-width: 991px) {
+  .hero-parallax {
+    background-attachment: scroll;
+  }
+}
+
+/*--------------------------------------------------------------
+# Tighter gap between "About" and the CTA block
+--------------------------------------------------------------*/
+.about-two {
+  padding-bottom: 60px;
+}
+
+.cta-one {
+  padding-top: 40px;
+}
+
+/* Keep the CTA card from touching the photo section below it */
+.cta-one {
+  padding-bottom: 50px;
 }

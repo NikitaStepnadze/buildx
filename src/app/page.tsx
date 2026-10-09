@@ -8,7 +8,6 @@ import HeaderTwo from '@/sections/home-two/HeaderTwo';
 import PortfolioTwo from '@/sections/home-two/PortfolioTwo';
 import ProcessTwo from '@/sections/home-two/ProcessTwo';
 import ServiceTwo from '@/sections/home-two/ServiceTwo';
-import SlidingTextTwo from '@/sections/home-two/SlidingTextTwo';
 import StrickyHeaderTwo from '@/sections/home-two/StrickyHeaderTwo';
 import WhyChooseTwo from '@/sections/home-two/WhyChooseTwo';
 import React from 'react';
@@ -23,7 +22,6 @@ const page: React.FC = () => {
             <WhyChooseTwo />
             <CounterTwo />
             <ProcessTwo />
-            <SlidingTextTwo />
             <PortfolioTwo />
             <BlogTwo />
             <FooterTwo />

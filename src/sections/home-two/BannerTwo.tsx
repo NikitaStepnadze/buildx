@@ -3,16 +3,6 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
-import Image from 'next/image';
-import sliderShape1 from '../../../public/assets/images/shapes/main-slider-shape-1.png';
-import sliderShape2 from '../../../public/assets/images/shapes/main-slider-shape-2.png';
-import sliderShape3 from '../../../public/assets/images/shapes/main-slider-shape-3.png';
-import sliderShape4 from '../../../public/assets/images/shapes/main-slider-shape-4.png';
-import sliderImg from '../../../public/assets/images/resources/main-slider-img-1-1.png';
-import clientImg1 from '../../../public/assets/images/resources/main-slider-satisfied-client-1-1.jpg';
-import clientImg2 from '../../../public/assets/images/resources/main-slider-satisfied-client-1-2.jpg';
-import ratingLogo from '../../../public/assets/images/resources/main-slider-rating-content-logo.png';
-import AdvanceCountUp from '@/components/elements/AdvanceCountUp';
 import Link from 'next/link';
 
 interface BannerSliderItem {
@@ -22,8 +12,6 @@ interface BannerSliderItem {
     description: string;
     buttonText: string;
     buttonLink: string;
-    happyClients: number;
-    positiveRating: number;
 }
 const sliderItems: BannerSliderItem[] = [
     {
@@ -33,8 +21,6 @@ const sliderItems: BannerSliderItem[] = [
         description: 'ვამზადებთ და ვამონტაჟებთ ეზოს ჭიშკრებს, სახლის კარებს, აივნისა და კიბის მოაჯირებს და ვასრულებთ ეზოს შემოღობვას.',
         buttonText: 'დაიწყეთ ახლავე',
         buttonLink: '/contact',
-        happyClients: 2000,
-        positiveRating: 30
     },
     {
         id: 2,
@@ -43,8 +29,6 @@ const sliderItems: BannerSliderItem[] = [
         description: 'ვამზადებთ და ვამონტაჟებთ ეზოს ჭიშკრებს, სახლის კარებს, აივნისა და კიბის მოაჯირებს და ვასრულებთ ეზოს შემოღობვას.',
         buttonText: 'დაიწყეთ ახლავე',
         buttonLink: '/contact',
-        happyClients: 3000,
-        positiveRating: 25,
     },
     {
         id: 3,
@@ -53,8 +37,6 @@ const sliderItems: BannerSliderItem[] = [
         description: 'ვამზადებთ და ვამონტაჟებთ ეზოს ჭიშკრებს, სახლის კარებს, აივნისა და კიბის მოაჯირებს და ვასრულებთ ეზოს შემოღობვას.',
         buttonText: 'დაიწყეთ ახლავე',
         buttonLink: '/contact',
-        happyClients: 4000,
-        positiveRating: 35
     }
 ];
 
@@ -63,21 +45,6 @@ const BannerTwo: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <section className="main-slider">
-            <div className="main-slider__shape-bg-2"></div>
-            <div className="main-slider__shape-bg"></div>
-            <div className="main-slider__shape-bg-3 img-bounce"></div>
-            <div className="main-slider__shape-1 zoominout">
-                <Image src={sliderShape1} width={42} height={34} alt="shape-image" />
-            </div>
-            <div className="main-slider__shape-2 rotate-me">
-                <Image src={sliderShape2} width={333} height={318} alt="shape-image" />
-            </div>
-            <div className="main-slider__shape-3 float-bob-x">
-                <Image src={sliderShape3} width={148} height={56} alt="shape-image" />
-            </div>
-            <div className="main-slider__shape-4 rotate-me">
-                <Image src={sliderShape4} width={122} height={83} alt="shape-image" />
-            </div>
             <div className="main-slider__carousel owl-carousel owl-theme">
                 <Swiper
                     modules={[Navigation, Autoplay, EffectFade]}
@@ -98,16 +65,6 @@ const BannerTwo: React.FC = () => {
                             key={item.id}
                         >
                             <div className={`item ${index === activeIndex ? "active" : ""}`}>
-                                <div className="main-slider__img-box">
-                                    <div className="main-slider__img">
-                                        <Image src={sliderImg} width={630} height={734} loading="eager" alt="" />
-                                        <div className="main-slider__img-shape-box ">
-                                            <div className="main-slider__img-shape-1">
-                                                <div className="main-slider__img-shape-2"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="container">
                                     <div className="main-slider__content">
                                         <div className="main-slider__title-box">
@@ -120,41 +77,6 @@ const BannerTwo: React.FC = () => {
                                         <p className="main-slider__text">ვამზადებთ და ვამონტაჟებთ ეზოს ჭიშკრებს, სახლის კარებს,
                                             <br /> აივნისა და შიდა და გარე კიბის მოაჯირებს,
                                             <br /> ასევე ვასრულებთ ეზოს შემოღობვას.</p>
-                                        <div className="main-slider__satisfied-client-and-rating-box">
-                                            <div className="main-slider__satisfied-client-box">
-                                                <ul className="list-unstyled main-slider__satisfied-client-list">
-                                                    <li>
-                                                        <div className="main-slider__satisfied-client-img">
-                                                            <Image src={clientImg1} width={42} height={42} alt="" />
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div className="main-slider__satisfied-client-img">
-                                                            <Image src={clientImg2} width={42} height={42} alt="" />
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div className="main-slider__satisfied-client-content">
-                                                    <div className="main-slider__satisfied-client-count count-box">
-                                                        <h4 className="count-text" ><AdvanceCountUp ending={item?.happyClients} /> </h4>
-                                                        <span className="main-slider__satisfied-client-count-plus">+</span>
-                                                    </div>
-                                                    <p className="main-slider__satisfied-client-count-text">კმაყოფილი კლიენტი </p>
-                                                </div>
-                                            </div>
-                                            <div className="main-slider__rating-box">
-                                                <div className="main-slider__rating-count count-box">
-                                                    <h3 className="count-text" ><AdvanceCountUp ending={item?.positiveRating} /> </h3>
-                                                    <span className="main-slider__satisfied-client-count-letter">k</span>
-                                                </div>
-                                                <div className="main-slider__rating-content">
-                                                    <p className="main-slider__rating-content-sub-title">დადებითი შეფასება</p>
-                                                    <div className="main-slider__rating-content-logo">
-                                                        <Image src={ratingLogo} width={44} height={16} alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

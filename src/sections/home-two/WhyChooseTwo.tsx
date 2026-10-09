@@ -1,8 +1,6 @@
 import React from 'react';
 import ctaImg from '../../../public/assets/images/resources/cta-one-img-1.png';
 import ctaBg from '../../../public/assets/images/shapes/cta-one-shape-bg.png';
-import whyChooseBg from '../../../public/assets/images/shapes/why-choose-two-shape-bg.png';
-import whyChooseStar from '../../../public/assets/images/shapes/why-choose-two-star.png';
 import reviewShape from '../../../public/assets/images/shapes/why-choose-two-review-shape-1.png';
 import whyChooseImg from '../../../public/assets/images/resources/why-choose-two-img-1.png';
 import pointIcon1 from '../../../public/assets/images/icon/why-choose-two-point-icon-1.png';
@@ -39,13 +37,8 @@ const WhyChooseTwo: React.FC = () => {
             </section>
 
             {/* Why Choose Section */}
+            <div className="hero-parallax">
             <section className="why-choose-two">
-                <div
-                    className="why-choose-two__shape-bg" style={{ backgroundImage: `url(${whyChooseBg})` }} ></div>
-
-                <div className="why-choose-two__star zoominout">
-                    <Image src={whyChooseStar} width={66} height={66} alt="Star shape" />
-                </div>
 
                 <div className="container">
                     <div className="row">
@@ -170,6 +163,7 @@ const WhyChooseTwo: React.FC = () => {
                     </div>
                 </div>
             </section>
+            </div>
         </>
     );
 };
