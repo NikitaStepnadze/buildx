@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const PortfolioTwo: React.FC = () => {
     return (
-        <section className="portfolio-two">
+        <section className="portfolio-two hero-parallax">
             <div className="portfolio-two__wrap">
                 {/* Section Title */}
                 <div className="section-title-two text-center sec-title-animation animation-style1">

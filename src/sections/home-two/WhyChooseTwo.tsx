@@ -37,7 +37,7 @@ const WhyChooseTwo: React.FC = () => {
             </section>
 
             {/* Why Choose Section */}
-            <div className="hero-parallax">
+            <div className="hero-parallax hero-parallax--alt">
             <section className="why-choose-two">
 
                 <div className="container">

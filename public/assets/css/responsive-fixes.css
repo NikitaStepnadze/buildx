@@ -344,8 +344,8 @@ h1, h2, h3, h4, h5, h6, p, a {
 .hero-parallax {
   position: relative;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../buildx_hero.png") center / cover no-repeat fixed #121e0f;
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../content/gloved-hands-bg.jpg") center / cover no-repeat fixed #121e0f;
   padding-bottom: 80px;
 }
 
@@ -382,4 +382,22 @@ h1, h2, h3, h4, h5, h6, p, a {
 /* Keep the CTA card from touching the photo section below it */
 .cta-one {
   padding-bottom: 50px;
+}
+
+/* Portfolio section uses the same fixed hero backdrop */
+.portfolio-two.hero-parallax {
+  padding-bottom: 60px;
+}
+
+/* "Why us" block gets its own photo; portfolio keeps the hero photo */
+.hero-parallax--alt {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../buildx_hero.png") center / cover no-repeat fixed #121e0f;
+}
+
+@media (max-width: 991px) {
+  .hero-parallax--alt {
+    background-attachment: scroll;
+  }
 }
